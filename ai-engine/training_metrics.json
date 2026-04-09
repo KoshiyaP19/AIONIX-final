@@ -1,0 +1,6 @@
+{
+    "total_logs": 40,
+    "training_samples": 40,
+    "rl_updates": 40,
+    "anomalies_detected": 2
+}
