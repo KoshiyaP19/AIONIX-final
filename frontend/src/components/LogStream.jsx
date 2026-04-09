@@ -16,7 +16,7 @@ const LogStream = () => {
 
   useEffect(() => {
 
-    fetch("https://aionix-final-1.onrender.com/logs")
+    fetch("https://aionix-final.onrender.com/logs")
       .then((res) => res.json())
       .then((data) => {
 
@@ -36,7 +36,7 @@ const LogStream = () => {
 
   useEffect(() => {
 
-    socketRef.current = io("https://aionix-final-1.onrender.com", {
+    socketRef.current = io("https://aionix-final.onrender.com", {
       transports: ["websocket"]
     });
 

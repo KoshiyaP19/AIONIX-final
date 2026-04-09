@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
 
-const socket = io("https://aionix-final-1.onrender.com");
+const socket = io("https://aionix-final.onrender.com");
 
 const AIInsights = () => {
   const [qTable, setQTable] = useState([]);
 
   useEffect(() => {
     const fetchData = () => {
-      axios.get("https://aionix-final-1.onrender.com/qtable")
+      axios.get("https://aionix-final.onrender.com/qtable")
         .then(res => setQTable(res.data))
         .catch(err => console.error("Failed to fetch Q-table:", err));
     };

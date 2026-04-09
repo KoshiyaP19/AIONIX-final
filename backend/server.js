@@ -319,7 +319,7 @@ setInterval(async () => {
   };
 
   await axios.post(
-    "https://aionix-final-1.onrender.com/api/logs",
+    "https://aionix-final.onrender.com/api/logs",
     log
   );
 
