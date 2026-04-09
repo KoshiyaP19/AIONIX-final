@@ -15,7 +15,7 @@ const SystemOverview = () => {
     try {
 
       // -------- GET TRUE SYSTEM STATS --------
-      const statsRes = await axios.get("http://localhost:5000/stats");
+      const statsRes = await axios.get("https://aionix-main.onrender.com/stats");
       const systemStats = statsRes.data;
 
       // -------- AI CONFIDENCE --------
@@ -23,7 +23,7 @@ const SystemOverview = () => {
 
       try {
 
-        const qRes = await axios.get("http://localhost:5000/qtable");
+        const qRes = await axios.get("https://aionix-main.onrender.com/qtable");
         const qTable = qRes.data;
 
         let confidenceTotal = 0;

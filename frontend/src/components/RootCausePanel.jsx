@@ -6,7 +6,7 @@ const RootCausePanel = () => {
 
   const fetchClusters = () => {
 
-    fetch("http://localhost:5000/clusters")
+    fetch("https://aionix-main.onrender.com/clusters")
       .then(res => res.json())
       .then(data => {
 

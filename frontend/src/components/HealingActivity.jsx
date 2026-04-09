@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import axios from "axios";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://aionix-main.onrender.com");
 
 const HealingActivity = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     // ✅ Load previous healing events on page load
-    axios.get("http://localhost:5000/healing")
+    axios.get("https://aionix-main.onrender.com/healing")
       .then(res => {
         // newest on top
         setEvents(res.data);

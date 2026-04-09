@@ -41,7 +41,7 @@ const ChatPanel = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/chat', {
+      const response = await axios.post('https://aionix-main.onrender.com/chat', {
         message: userMsg,
         // send history excluding the newly added user message (or including, chat.py handles just standard history)
         history: messages
