@@ -25,7 +25,7 @@ const io = new Server(server, {
 // ================= DATABASE =================
 
 mongoose.connect(
-  "mongodb+srv://aionixUser:w%26DXUPwGum1%24@cluster0.dfdfhfi.mongodb.net/aionix?retryWrites=true&w=majority"
+  "mongodb+srv://koshiyap50_db_user:ic5frSNn7Y1zTzBg@cluster0.mw6kabl.mongodb.net/?appName=Cluster0"
 )
 .then(() => console.log("✅ MongoDB Atlas Connected"))
 .catch((err) => console.error("❌ MongoDB Error:", err));
@@ -319,7 +319,7 @@ setInterval(async () => {
   };
 
   await axios.post(
-    "https://aionix-main.onrender.com/api/logs",
+    "https://aionix-final-1.onrender.com/api/logs",
     log
   );
 

@@ -5,7 +5,7 @@ const ServiceGraph = () => {
   const [services, setServices] = useState({});
 
   useEffect(() => {
-    axios.get("https://aionix-main.onrender.com/logs")
+    axios.get("https://aionix-final-1.onrender.com/logs")
       .then(res => {
         const stats = {};
 
