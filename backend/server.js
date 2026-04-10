@@ -247,9 +247,17 @@ app.post("/chat", async (req, res) => {
       l => l.anomaly || l.severity?.toUpperCase() === "HIGH"
     ).length;
 
-    const context = { totalLogs, anomalies };
+    const context = {
+      stats: {
+        totalLogs,
+        anomalies,
+        services: 1,
+        systemHealth: 90,
+        aiConfidence: 85
+     }
+    };
 
-    const response = await axios.post("http://localhost:8000/chat", {
+    const response = await axios.post(`${process.env.AI_ENGINE_URL}/chat`, {
       message,
       history,
       context
@@ -276,7 +284,7 @@ cron.schedule("0 */6 * * *", async () => {
     const anomalies = logs.filter(l => l.anomaly).length;
 
     const response = await axios.post(
-      "http://localhost:8000/generate-digest",
+      `${process.env.AI_ENGINE_URL}/generate-digest`,
       { totalLogs, anomalies }
     );
 
