@@ -1,5 +1,6 @@
 from log_classifier import LogClassifier
 from anomaly_model import AnomalyModel
+import numpy as np
 import random
 
 logs = [

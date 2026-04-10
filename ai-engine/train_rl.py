@@ -19,6 +19,6 @@ for i in range(500):
         "error_count": random.randint(0,20)
     }
 
-    requests.post("http://localhost:8000/analyze",json=payload)
+    requests.post("https://aionix-ai-engine.onrender.com/analyze",json=payload)
 
     print("Training step",i)
