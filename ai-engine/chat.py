@@ -2,7 +2,9 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
 import google.generativeai as genai
-from google.genai import types
+
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-pro")
 import os
 from dotenv import load_dotenv
 
@@ -123,11 +125,8 @@ async def chat_endpoint(request: ChatRequest):
         last_error = None
         for model_name in models_to_try:
             try:
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=contents,
-                    config=config
-                )
+                response = model.generate_content(request.message)
+                        return {"reply": response.text}
                 if response.text:
                     return {"reply": response.text}
             except Exception as e:
