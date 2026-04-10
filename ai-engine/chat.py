@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
-from google import genai
+import google.generativeai as genai
 from google.genai import types
 import os
 from dotenv import load_dotenv
