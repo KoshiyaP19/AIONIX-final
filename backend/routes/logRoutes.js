@@ -9,9 +9,9 @@ router.post("/", async (req, res) => {
     const { message, service } = req.body;
 
     // Send to AI Engine
-    const aiResponse = await axios.post("http://localhost:8000/analyze", {
-      message: message
-    });
+    axios.post("https://aionix-final.onrender.com/analyze", {
+  message: message
+      });
 
     const { anomaly, severity } = aiResponse.data;
 
